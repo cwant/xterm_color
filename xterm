@@ -1,0 +1,14 @@
+#!/bin/sh
+
+if [ -n "$1" ]; then
+    color=`/usr/bin/python /home/cwant/bin/xterm_color.py --favour $1`
+else
+        color=`/usr/bin/python /home/cwant/bin/xterm_color.py`
+fi
+
+# Font face option
+#  -fa "Liberation Mono:size=10:antialias=false" \
+
+exec /usr/bin/xterm \
+  -fn 10x20 \
+  -bg $color -fg rgb:e0/e0/e0 -sl 500 +rv -vb &
